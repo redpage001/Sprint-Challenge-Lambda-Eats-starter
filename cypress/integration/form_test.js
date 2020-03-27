@@ -30,5 +30,16 @@ describe("Testing the Sign In Form", function(){
         cy.get('button[type="Submit"]')
           .click()
     });
+
+    it("CHecks to see if home button works from Form Page", function(){
+        cy.get("#pizzaButton")
+            .click()
+        cy.url()
+            .should("include", "/pizza")
+        cy.get("#homeButton")
+            .click()
+        cy.url()
+            .should("include", "/")
+    })
         
 });
